@@ -128,7 +128,3 @@ public class MyString {
 2. Open the project in your preferred IDE.
 3. Compile and run the `Main` class.
 4. Follow the menu to perform various string manipulation operations.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

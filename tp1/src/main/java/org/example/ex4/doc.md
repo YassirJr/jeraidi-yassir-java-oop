@@ -75,6 +75,3 @@ public class OccurrencesLettres {
 3. Compile and run the `Main` class.
 4. Follow the prompt to enter a text.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

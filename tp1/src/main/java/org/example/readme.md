@@ -45,7 +45,3 @@ public class Main {
 2. Open the project in your preferred IDE.
 3. Compile and run the central `Main` class.
 4. The program will sequentially execute each exercise: Notes Management System, Conjugation System, String Manipulation System, and Letter Occurrences System.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

@@ -117,7 +117,3 @@ public class Notes {
 2. Open the project in your preferred IDE.
 3. Compile and run the `Main` class.
 4. Follow the prompts to enter the number of students and their respective notes.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

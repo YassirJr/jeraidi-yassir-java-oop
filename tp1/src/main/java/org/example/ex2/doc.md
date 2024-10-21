@@ -72,7 +72,3 @@ public class Conjugaison {
 2. Open the project in your preferred IDE.
 3. Compile and run the `Main` class.
 4. Follow the prompt to enter a French verb ending in "er".
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
