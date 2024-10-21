@@ -22,3 +22,5 @@ public class Main {
         scanner.close();
     }
 }
+
+// can u write the explain in md file and use fr instead english ?
