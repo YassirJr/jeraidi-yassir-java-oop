@@ -6,15 +6,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Categorie etudeCategorie = new Categorie("etude", "etude categorie");
-        Categorie gamingCategorie = new Categorie("gaming", "gaming categorie");
-        Categorie editingCategorie = new Categorie("editing", "editing categorie");
-
-        List<Ordinateur> ordinateurs = List.of(
-                new Ordinateur("pc 1", "dell", 10000.00, "bon pc", 20, etudeCategorie),
-                new Ordinateur("pc 2", "msi", 15000.00, "bon pc", 10, gamingCategorie),
-                new Ordinateur("mac 2024", "apple", 30000.00, "bon pc", 5, editingCategorie)
-        );
+        List<Ordinateur> ordinateurs = getOrdinateurs();
 
         Client client = new Client("yacer", "jr", "y@g.c", "casa", "casa/maroc", "0600000000");
 
@@ -32,5 +24,17 @@ public class Main {
             System.out.println("Ordinateur :" + ligneCommande.getOrdinateur().getNom());
             System.out.println("Quantite :" + ligneCommande.getQuantite());
         });
+    }
+
+    private static List<Ordinateur> getOrdinateurs() {
+        Categorie etudeCategorie = new Categorie("etude", "etude categorie");
+        Categorie gamingCategorie = new Categorie("gaming", "gaming categorie");
+        Categorie editingCategorie = new Categorie("editing", "editing categorie");
+
+        return List.of(
+                new Ordinateur("pc 1", "dell", 10000.00, "bon pc", 20, etudeCategorie),
+                new Ordinateur("pc 2", "msi", 15000.00, "bon pc", 10, gamingCategorie),
+                new Ordinateur("mac 2024", "apple", 30000.00, "bon pc", 5, editingCategorie)
+        );
     }
 }
