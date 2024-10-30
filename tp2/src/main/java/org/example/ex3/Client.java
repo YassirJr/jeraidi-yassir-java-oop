@@ -10,7 +10,7 @@ public class Client {
     private String adresse;
     private String ville;
     private String telephone;
-    private List<Commande> commandes = new ArrayList<>();
+    private final List<Commande> commandes = new ArrayList<>();
 
     public Client(String nom, String prenom, String email, String adresse, String ville, String telephone) {
         this.nom = nom;
@@ -71,10 +71,6 @@ public class Client {
 
     public List<Commande> getCommandes() {
         return commandes;
-    }
-
-    public void setCommandes(List<Commande> commandes) {
-        this.commandes = commandes;
     }
 
     public void ajouteCommande(Commande commande) {

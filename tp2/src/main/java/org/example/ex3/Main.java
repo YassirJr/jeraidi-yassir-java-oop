@@ -1,7 +1,6 @@
 package org.example.ex3;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {

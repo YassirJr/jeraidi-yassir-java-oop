@@ -11,10 +11,10 @@ This project is a collection of various Java exercises unified under a single en
 
 ## Exercises
 
-- **Exercise 1**: Notes Management System
-- **Exercise 2**: Conjugation System
-- **Exercise 3**: String Manipulation System
-- **Exercise 4**: Letter Occurrences System
+- **Exercise 1**: Library Management System
+- **Exercise 2**: Employee Salary Management System
+- **Exercise 3**: Computer Sales Management System
+- **Exercise 4**: Product Collection Management Using Lists and Interfaces
 
 ## Main Entry Point
 
@@ -27,16 +27,13 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Exercice 1");
         org.example.ex1.Main.main(args);
-        System.out.println("Exercice 2");
         org.example.ex2.Main.main(args);
-        System.out.println("Exercice 3");
         org.example.ex3.Main.main(args);
-        System.out.println("Exercice 4");
-        org.example.ex4.Main.main(args);
+        org.example.ex4.Application.main(args);
     }
 }
+
 ```
 
 ## Exercises link

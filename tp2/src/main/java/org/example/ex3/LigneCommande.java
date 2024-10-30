@@ -35,5 +35,4 @@ public class LigneCommande {
         this.ordinateur = ordinateur;
     }
 
-
 }

@@ -5,5 +5,6 @@ public class Main {
         org.example.ex1.Main.main(args);
         org.example.ex2.Main.main(args);
         org.example.ex3.Main.main(args);
+        org.example.ex4.Application.main(args);
     }
 }

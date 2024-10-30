@@ -9,6 +9,7 @@ This repository contains practical exercises (TP - Travaux Pratiques) done in cl
 - [Introduction](#introduction)
 - [Installation](#installation)
 - [Usage](#usage)
+- [TPs](#tps)
 - [License](#license)
 - [Contact](#contact)
 
@@ -44,6 +45,15 @@ public class Main {
     }
 }
 ```
+
+## TPs
+
+The following is a list of practical exercises available in this repository:
+
+- [TP 1](tp1/src/main/java/org/example/readme.md)
+- [Compte rendu TP1](tp1/compte-rendu.pdf)
+- [TP 2](tp2/src/main/java/org/example/readme.md)
+- [Compte rendu TP2](tp2/compte-rendu.pdf)
 
 ## License
 

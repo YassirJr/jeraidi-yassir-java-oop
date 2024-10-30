@@ -59,7 +59,7 @@ public class Application {
                     } else System.out.println("Aucun produit");
                     break;
                 case 3:
-                    int id = metierProduitImpl.getAll().stream().mapToInt(Produit::getId).sum() | 1;
+                    int id = metierProduitImpl.getAll().stream().mapToInt(Produit::getId).sum() ;
                     metierProduitImpl.add(addNewProduct(id));
                     System.out.println("Le produit ajoute avec success");
                     break;
