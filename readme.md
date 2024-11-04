@@ -54,6 +54,8 @@ The following is a list of practical exercises available in this repository:
 - [Compte rendu TP1](tp1/compte-rendu.pdf)
 - [TP 2](tp2/src/main/java/org/example/readme.md)
 - [Compte rendu TP2](tp2/compte-rendu.pdf)
+- [TP 3](tp3/src/main/java/org/example/readme.md)
+- [Compte rendu TP3](tp3/compte-rendu.pdf)
 
 ## License
 
