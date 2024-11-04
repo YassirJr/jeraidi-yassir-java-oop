@@ -9,6 +9,10 @@
 *.iml
 *.ipr
 
+tp1/code-result-ex1-ex2.png
+tp1/code-result-ex3-ex4.png
+tp2/code-result.png
+tp3/code-result.png
 
 ### VS Code ###
 .vscode/

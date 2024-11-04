@@ -3,8 +3,7 @@ package org.example.ex3;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args  , Scanner scanner) {
         int choix;
 
         do {
@@ -42,8 +41,6 @@ public class Main {
             }
 
         } while (choix != 5);
-
-        scanner.close();
     }
 }
 

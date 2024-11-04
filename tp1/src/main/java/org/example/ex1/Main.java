@@ -3,8 +3,7 @@ package org.example.ex1;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args , Scanner scanner) {
         System.out.println("Combien d'etudiants ? : ");
         float[] notesFromInput = new float[scanner.nextInt()];
         for (int i = 0; i < notesFromInput.length; i++) {
@@ -19,8 +18,5 @@ public class Main {
         System.out.println("Entrez une note : ");
         int note = scanner.nextInt();
         System.out.println("Nombre d'etudiants ayant la note " + note + " : " + notes.getRepeatedNote(note));
-        scanner.close();
     }
 }
-
-// can u write the explain in md file and use fr instead english ?

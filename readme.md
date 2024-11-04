@@ -1,5 +1,3 @@
----START---
-
 # TP (Les Exercices Dans La classe)
 
 This repository contains practical exercises (TP - Travaux Pratiques) done in class.
@@ -7,15 +5,25 @@ This repository contains practical exercises (TP - Travaux Pratiques) done in cl
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Installation](#installation)
-- [Usage](#usage)
 - [TPs](#tps)
+- [Installation](#installation)
 - [License](#license)
 - [Contact](#contact)
 
 ## Introduction
 
 This repository provides a collection of practical exercises and examples that are used in our school classes to reinforce learning and understanding of various topics.
+
+## TPs
+
+The following is a list of practical exercises available in this repository:
+
+- [TP 1](tp1/readme.md)
+- [Compte rendu TP1](tp1/compte-rendu.pdf)
+- [TP 2](tp2/readme.md)
+- [Compte rendu TP2](tp2/compte-rendu.pdf)
+- [TP 3](tp3/readme.md)
+- [Compte rendu TP3](tp3/compte-rendu.pdf)
 
 ## Installation
 
@@ -33,30 +41,6 @@ cd jeraidi-yassir-java-oop
 mvn install
 ```
 
-## Usage
-
-Each folder within this repository contains exercises related to different topics. Navigate to the relevant folder to find the instructions and code examples.
-
-```java
-// Example usage (if applicable)
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
-}
-```
-
-## TPs
-
-The following is a list of practical exercises available in this repository:
-
-- [TP 1](tp1/src/main/java/org/example/readme.md)
-- [Compte rendu TP1](tp1/compte-rendu.pdf)
-- [TP 2](tp2/src/main/java/org/example/readme.md)
-- [Compte rendu TP2](tp2/compte-rendu.pdf)
-- [TP 3](tp3/src/main/java/org/example/readme.md)
-- [Compte rendu TP3](tp3/compte-rendu.pdf)
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -67,5 +51,4 @@ If you have any questions or need further assistance, feel free to contact us:
 
 - Email: [yassir.jeraidi@gmail.com](mailto:yassir.jeraidi@gmail.com)
 - GitHub: [YassirJr](https://github.com/YassirJr)
-
----END-----
+- LinkedIn: [Yassir Jeraidi](https://www.linkedin.com/in/yassir-jeraidi/)
