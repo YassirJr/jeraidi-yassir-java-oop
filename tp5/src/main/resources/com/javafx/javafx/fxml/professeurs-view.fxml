@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.javafx.javafx.controller.ProfesseurController"
+      spacing="10">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <TextField fx:id="searchField" promptText="Rechercher..." HBox.hgrow="ALWAYS"/>
+        <Button text="Rechercher" onAction="#handleSearch"/>
+        <Button text="Ajouter" onAction="#handleAdd"/>
+    </HBox>
+
+    <TableView fx:id="professeurTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID"/>
+            <TableColumn fx:id="nomColumn" text="Nom"/>
+            <TableColumn fx:id="prenomColumn" text="Prénom"/>
+            <TableColumn fx:id="cinColumn" text="CIN"/>
+            <TableColumn fx:id="emailColumn" text="Email"/>
+            <TableColumn fx:id="departementColumn" text="Département"/>
+            <TableColumn fx:id="actionsColumn" text="Actions"/>
+        </columns>
+    </TableView>
+</VBox>

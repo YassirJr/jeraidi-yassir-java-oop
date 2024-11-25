@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.javafx.javafx.controller.MainController"
+            prefHeight="600.0" prefWidth="800.0">
+
+    <top>
+        <MenuBar>
+            <Menu text="Gestion">
+                <MenuItem text="Professeurs" onAction="#showProfesseurs"/>
+                <MenuItem text="Départements" onAction="#showDepartements"/>
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <center>
+        <TabPane fx:id="mainTabPane">
+            <Tab text="Professeurs" closable="false">
+                <fx:include source="professeurs-view.fxml"/>
+            </Tab>
+            <Tab text="Départements" closable="false">
+                <fx:include source="departement-view.fxml"/>
+            </Tab>
+        </TabPane>
+    </center>
+
+</BorderPane>
