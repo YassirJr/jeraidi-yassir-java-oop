@@ -25,7 +25,8 @@ The following is a list of practical exercises available in this repository:
 - [TP 3](tp3/readme.md)
 - [Compte rendu TP3](tp3/compte-rendu.pdf)
 - [TP 4](tp4/readme.md)
-- 
+- [TP 5](tp5/readme.md)
+
 ## Installation
 
 To get a copy of the exercises on your local machine, follow these steps:

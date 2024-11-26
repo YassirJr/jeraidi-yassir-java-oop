@@ -50,19 +50,19 @@ public class Main {
 ### Collections
 
 Exercise 1:
-![exercise 1 Output](col-ex1-result.png)
+![exercise 1 Output](screenshots/col-ex1-result.png)
 Exercise 2:
-![exercise 2 Output](col-ex2-result.png)
+![exercise 2 Output](screenshots/col-ex2-result.png)
 Exercise 3:
-![exercise 3 Output](col-ex3-result.png)
+![exercise 3 Output](screenshots/col-ex3-result.png)
 
 ### Streams
 
 Exercise 1:
-![exercise 1 Output (Part 1)](str-ex1-result-p1.png)
-![exercise 1 Output (Part 2)](str-ex1-result-p2.png)
+![exercise 1 Output (Part 1)](screenshots/str-ex1-result-p1.png)
+![exercise 1 Output (Part 2)](screenshots/str-ex1-result-p2.png)
 Exercise 2:
-![exercise 2 Output](str-ex2-result.png)
+![exercise 2 Output](screenshots/str-ex2-result.png)
 
 
 - The code result indicates the sequential execution of five exercises, each demonstrating different Java collection and stream operations. Here is a breakdown of the output:

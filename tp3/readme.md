@@ -37,7 +37,7 @@ public class Main {
 
 ## Main Code Results
 
-![Main Results](code-result.png)
+![Main Results](screenshots/code-result.png)
 
 The code result indicates the sequential execution of three exercises, each demonstrating custom exception handling in Java. Here is a breakdown of the output:
 - Exercise 1: Vehicle Speed Test  

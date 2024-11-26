@@ -44,7 +44,7 @@ public class Main {
 
 ## Code Results
 
-![Code Results](code-result.png)
+![Code Results](screenshots/code-result.png)
 
 - Exercice 1 :
   This exercise appears to be a Library Management System. The output shows details of an Adherent (member) and a

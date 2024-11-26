@@ -84,8 +84,10 @@ public class ProfesseurController implements Initializable {
             protected void updateItem(Void item, boolean empty) {
                 super.updateItem(item, empty);
                 if (empty || getTableView().getItems().get(getIndex()) == null) {
+                    setGraphic(null);
                 } else {
-                    HBox buttons = new HBox(5, editBtn, deleteBtn , assignBtn);
+                    HBox buttons = new HBox(5, editBtn, deleteBtn, assignBtn);
+                    setGraphic(buttons);
                 }
             }
         });

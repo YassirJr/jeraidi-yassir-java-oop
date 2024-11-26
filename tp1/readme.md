@@ -44,9 +44,9 @@ public class Main {
 
 ## Code results
 
-![Exercise 1 and 2](code-result-ex1-ex2.png)
+![Exercise 1 and 2](screenshots/code-result-ex1-ex2.png)
 ***
-![Exercise 3 and 4](code-result-ex3-ex4.png)
+![Exercise 3 and 4](screenshots/code-result-ex3-ex4.png)
 
 Exercise 1: Notes Management System
 
