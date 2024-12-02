@@ -20,7 +20,7 @@
 
     <TableView fx:id="professeurTable" VBox.vgrow="ALWAYS">
         <columns>
-            <TableColumn fx:id="idColumn" text="ID"/>
+            <TableColumn fx:id="idColumn" text="ID" />
             <TableColumn fx:id="nomColumn" text="Nom"/>
             <TableColumn fx:id="prenomColumn" text="Prénom"/>
             <TableColumn fx:id="cinColumn" text="CIN"/>
