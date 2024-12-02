@@ -1,6 +1,9 @@
 package com.tp6.ex3.models;
 
-public class Produit {
+import java.io.Serializable;
+
+public class Produit implements Serializable {
+
     private String nom;
     private String marque;
     private double prix;

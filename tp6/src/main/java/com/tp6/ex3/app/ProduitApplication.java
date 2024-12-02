@@ -25,6 +25,7 @@ public class ProduitApplication {
                                     System.out.println("Nom : " + produit.getNom() + " Marque : " + produit.getMarque() +
                                             " Prix : " + produit.getPrix() + " Description : " + produit.getDescription() +
                                             " Nombre en stock : " + produit.getNombreEnStock()));
+                    else System.out.println("No products found.");
                     break;
                 case 2:
                     System.out.println("Enter the name of the product: ");
@@ -47,6 +48,7 @@ public class ProduitApplication {
                     int nombreEnStock = scanner.nextInt();
                     Produit p = new Produit(nom, marque, prix, description, nombreEnStock);
                     produitsMetier.add(p);
+                    System.out.println("Product added.");
                     break;
                 case 4:
                     System.out.println("Enter the name of the product: ");

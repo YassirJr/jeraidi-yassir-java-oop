@@ -3,6 +3,7 @@ package com.tp6.ex3.models;
 import java.io.Serializable;
 
 public class Client implements Serializable  {
+
     private String nom;
     private String prenom;
     private String adresse;

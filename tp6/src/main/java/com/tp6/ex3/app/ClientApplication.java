@@ -24,6 +24,7 @@ public class ClientApplication {
                             .forEach(client ->
                                     System.out.println("Nom : " + client.getNom() + " Prenom : " + client.getPrenom() +
                                             " Adresse : " + client.getAdresse() + " Tel : " + client.getTel() + " Email : " + client.getEmail()));
+                    else System.out.println("No clients found.");
                     break;
                 case 2:
                     System.out.println("Enter the name of the client: ");
