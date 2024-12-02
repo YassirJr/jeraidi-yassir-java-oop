@@ -26,6 +26,7 @@ The following is a list of practical exercises available in this repository:
 - [Compte rendu TP3](tp3/compte-rendu.pdf)
 - [TP 4](tp4/readme.md)
 - [TP 5](tp5/readme.md)
+- [TP 6](tp6/readme.md)
 
 ## Installation
 
