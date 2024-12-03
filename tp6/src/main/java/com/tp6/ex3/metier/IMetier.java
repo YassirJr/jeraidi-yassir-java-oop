@@ -6,7 +6,7 @@ import java.util.List;
 public interface IMetier<T> {
     T add(T t);
 
-    List<T> getAll() throws IOException;
+    List<T> getAll() throws IOException, ClassNotFoundException;
 
     T findByNom(String nom);
 

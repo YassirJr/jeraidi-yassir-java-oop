@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ClientApplication {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         Menu.menu("client");
         IMetier<Client> clientIMetier = new MetierClientImpl();
         Scanner scanner = new Scanner(System.in);

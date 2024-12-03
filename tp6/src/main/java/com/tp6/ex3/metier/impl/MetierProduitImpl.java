@@ -1,6 +1,5 @@
 package com.tp6.ex3.metier.impl;
 
-import com.tp6.ex3.models.Client;
 import com.tp6.ex3.models.Produit;
 import com.tp6.ex3.metier.IMetier;
 
@@ -19,18 +18,21 @@ public class MetierProduitImpl implements IMetier<Produit> {
     }
 
     @Override
-    public List<Produit> getAll() throws IOException {
+    public List<Produit> getAll() {
         produits.clear();
-        File file = new File(produitsFile);
-        FileReader fileReader = new FileReader(file);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
-        String line;
-        while ((line = bufferedReader.readLine()) != null) {
-            String[] values = line.split(";");
-            Produit produit = new Produit(values[0], values[1], Double.parseDouble(values[2]), values[3], Integer.parseInt(values[4]));
-            produits.add(produit);
+        try (FileInputStream file = new FileInputStream(produitsFile);
+             ObjectInputStream in = new ObjectInputStream(file)) {
+            while (true) {
+                try {
+                    Produit produit = (Produit) in.readObject();
+                    produits.add(produit);
+                } catch (EOFException e) {
+                    break;
+                }
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println(e.getMessage());
         }
-        bufferedReader.close();
         return produits;
     }
 
@@ -47,13 +49,13 @@ public class MetierProduitImpl implements IMetier<Produit> {
     @Override
     public void saveAll() {
         try {
-            FileWriter fileWriter = new FileWriter(produitsFile);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             for (Produit p : produits) {
-                bufferedWriter.write(p.getNom() + ";" + p.getMarque() + ";" + p.getPrix() + ";" + p.getDescription() + ";" + p.getNombreEnStock());
-                bufferedWriter.newLine();
+                FileOutputStream file = new FileOutputStream(produitsFile);
+                ObjectOutputStream out = new ObjectOutputStream(file);
+                out.writeObject(p);
+                out.close();
+                file.close();
             }
-            bufferedWriter.close();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

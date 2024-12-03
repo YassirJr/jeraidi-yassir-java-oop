@@ -101,7 +101,6 @@ methods.
 ```java
 package com.tp6.ex3.metier.impl;
 
-import com.tp6.ex3.models.Client;
 import com.tp6.ex3.models.Produit;
 import com.tp6.ex3.metier.IMetier;
 
@@ -120,18 +119,21 @@ public class MetierProduitImpl implements IMetier<Produit> {
     }
 
     @Override
-    public List<Produit> getAll() throws IOException {
+    public List<Produit> getAll() {
         produits.clear();
-        File file = new File(produitsFile);
-        FileReader fileReader = new FileReader(file);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
-        String line;
-        while ((line = bufferedReader.readLine()) != null) {
-            String[] values = line.split(";");
-            Produit produit = new Produit(values[0], values[1], Double.parseDouble(values[2]), values[3], Integer.parseInt(values[4]));
-            produits.add(produit);
+        try (FileInputStream file = new FileInputStream(produitsFile);
+             ObjectInputStream in = new ObjectInputStream(file)) {
+            while (true) {
+                try {
+                    Produit produit = (Produit) in.readObject();
+                    produits.add(produit);
+                } catch (EOFException e) {
+                    break;
+                }
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println(e.getMessage());
         }
-        bufferedReader.close();
         return produits;
     }
 
@@ -148,19 +150,55 @@ public class MetierProduitImpl implements IMetier<Produit> {
     @Override
     public void saveAll() {
         try {
-            FileWriter fileWriter = new FileWriter(produitsFile);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             for (Produit p : produits) {
-                bufferedWriter.write(p.getNom() + ";" + p.getMarque() + ";" + p.getPrix() + ";" + p.getDescription() + ";" + p.getNombreEnStock());
-                bufferedWriter.newLine();
+                FileOutputStream file = new FileOutputStream(produitsFile);
+                ObjectOutputStream out = new ObjectOutputStream(file);
+                out.writeObject(p);
+                out.close();
+                file.close();
             }
-            bufferedWriter.close();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
 }
 ```
+
+## How it works step by step :
+
+1. **`add(Produit produit)`**: Adds a product to the collection.
+   - The `produit` object is added to the `produits` list.
+   - The added product is returned.
+   - The method signature is implemented from the `IMetier` interface.
+   - The method does not persist the product to the file.
+   - The product is only added to the in-memory collection.
+   
+2. **`getAll()`**: Reads all products from the produits.dat file and loads them into memory.
+   - The `produits` list is cleared to avoid duplicates.
+   - A `FileInputStream` is created to read from the `produits.dat` file.
+   - An `ObjectInputStream` is created to read objects from the file.
+   - A `while` loop reads objects from the file until an `EOFException` is thrown.
+   - Each object read is cast to a `Produit` and added to the `produits` list.
+   - The method returns the list of products.
+
+3. **`findByNom(String nom)`**: Finds a product by its name.
+    - The `produits` list is filtered to find a product with a matching name.
+    - The first matching product is returned, or `null` if not found.
+
+4. **`delete(String nom)`**: Deletes a product by its name.
+    - The `produits` list is modified to remove the product with the specified name.
+    - The product is removed if its name matches the input `nom`.
+    - The method does not persist the changes to the file.
+    - The product is only removed from the in-memory collection.
+
+5. **`saveAll()`**: Saves all products to the produits.dat file.
+    - A `for` loop iterates over each product in the `produits` list.
+    - A `FileOutputStream` is created to write to the `produits.dat` file.
+    - An `ObjectOutputStream` is created to write objects to the file.
+    - The current product is written to the file.
+    - The output streams are closed after writing the product.
+    - The method does not handle exceptions or errors during writing.
+
 
 ## Class : MetierClientImpl
 
@@ -196,18 +234,22 @@ public class MetierClientImpl implements IMetier<Client> {
     }
 
     @Override
-    public List<Client> getAll() throws IOException {
+    public List<Client> getAll() {
         clients.clear();
-        File newFile = new File(clientsFile);
-        FileReader fileReader = new FileReader(newFile);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
-        String line;
-        while ((line = bufferedReader.readLine()) != null) {
-            String[] values = line.split(";");
-            Client client = new Client(values[0], values[1], values[2], values[3], values[4]);
-            clients.add(client);
+        try (FileInputStream file = new FileInputStream(clientsFile);
+             ObjectInputStream in = new ObjectInputStream(file)) {
+            while (true) {
+                try {
+                    Client client = (Client) in.readObject();
+                    clients.add(client);
+                } catch (EOFException e) {
+                    break;
+                }
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println(e.getMessage());
         }
-        bufferedReader.close();
+
         return clients;
     }
 
@@ -224,20 +266,58 @@ public class MetierClientImpl implements IMetier<Client> {
     @Override
     public void saveAll() {
         try {
-            File newFile = new File(clientsFile);
-            FileWriter fileWriter = new FileWriter(newFile);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             for (Client c : clients) {
-                bufferedWriter.write(c.getNom() + ";" + c.getPrenom() + ";" + c.getAdresse() + ";" + c.getTel() + ";" + c.getEmail());
-                bufferedWriter.newLine();
+                FileOutputStream file = new FileOutputStream(clientsFile);
+                ObjectOutputStream out = new ObjectOutputStream(file);
+
+                out.writeObject(c);
+
+                out.close();
+                file.close();
             }
-            bufferedWriter.close();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
 }
+
 ```
+
+## How it works step by step :
+
+1. **`add(Client client)`**: Adds a client to the collection.
+   - The `client` object is added to the `clients` list.
+   - The added client is returned.
+   - The method signature is implemented from the `IMetier` interface.
+   - The method does not persist the client to the file.
+   - The client is only added to the in-memory collection.
+
+2. **`getAll()`**: Reads all clients from the clients.dat file and loads them into memory.
+    - The `clients` list is cleared to avoid duplicates.
+    - A `FileInputStream` is created to read from the `clients.dat` file.
+    - An `ObjectInputStream` is created to read objects from the file.
+    - A `while` loop reads objects from the file until an `EOFException` is thrown.
+    - Each object read is cast to a `Client` and added to the `clients` list.
+    - The method returns the list of clients.
+   
+3. **`findByNom(String nom)`**: Finds a client by their name.
+    - The `clients` list is filtered to find a client with a matching name.
+    - The first matching client is returned, or `null` if not found.
+   
+4. **`delete(String nom)`**: Deletes a client by their name.
+    - The `clients` list is modified to remove the client with the specified name.
+    - The client is removed if their name matches the input `nom`.
+    - The method does not persist the changes to the file.
+    - The client is only removed from the in-memory collection.
+
+5. **`saveAll()`**: Saves all clients to the clients.dat file.
+    - A `for` loop iterates over each client in the `clients` list.
+    - A `FileOutputStream` is created to write to the `clients.dat` file.
+    - An `ObjectOutputStream` is created to write objects to the file.
+    - The current client is written to the file.
+    - The output streams are closed after writing the client.
+    - The method does not handle exceptions or errors during writing.
+
 
 ## Class : Menu
 
@@ -446,7 +526,7 @@ Viewing All Products:
 Nom : Laptop Marque : Dell Prix : 899.99 Description : High-performance laptop Nombre en stock : 50
 ```
 
-and more actions ...
+For more actions, refer to the `ProduitApplication` class.
 
 
 ---
@@ -536,7 +616,4 @@ Enter the phone number of the client: 555-1234
 Enter the email of the client: john.doe@example.com
 ```
 
-and more ...
-
----
-
+for more actions please refer to the `ClientApplication` class.

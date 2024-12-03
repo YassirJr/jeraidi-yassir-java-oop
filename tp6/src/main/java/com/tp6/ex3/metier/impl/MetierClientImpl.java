@@ -18,18 +18,22 @@ public class MetierClientImpl implements IMetier<Client> {
     }
 
     @Override
-    public List<Client> getAll() throws IOException {
+    public List<Client> getAll() {
         clients.clear();
-        File newFile = new File(clientsFile);
-        FileReader fileReader = new FileReader(newFile);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
-        String line;
-        while ((line = bufferedReader.readLine()) != null) {
-            String[] values = line.split(";");
-            Client client = new Client(values[0], values[1], values[2], values[3], values[4]);
-            clients.add(client);
+        try (FileInputStream file = new FileInputStream(clientsFile);
+             ObjectInputStream in = new ObjectInputStream(file)) {
+            while (true) {
+                try {
+                    Client client = (Client) in.readObject();
+                    clients.add(client);
+                } catch (EOFException e) {
+                    break;
+                }
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println(e.getMessage());
         }
-        bufferedReader.close();
+
         return clients;
     }
 
@@ -46,14 +50,15 @@ public class MetierClientImpl implements IMetier<Client> {
     @Override
     public void saveAll() {
         try {
-            File newFile = new File(clientsFile);
-            FileWriter fileWriter = new FileWriter(newFile);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             for (Client c : clients) {
-                bufferedWriter.write(c.getNom() + ";" + c.getPrenom() + ";" + c.getAdresse() + ";" + c.getTel() + ";" + c.getEmail());
-                bufferedWriter.newLine();
+                FileOutputStream file = new FileOutputStream(clientsFile);
+                ObjectOutputStream out = new ObjectOutputStream(file);
+
+                out.writeObject(c);
+
+                out.close();
+                file.close();
             }
-            bufferedWriter.close();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

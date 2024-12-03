@@ -57,4 +57,10 @@ public class Client implements Serializable  {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    // serialization
+    @Override
+    public String toString() {
+        return nom + "," + prenom + "," + adresse + "," + tel + "," + email;
+    }
 }

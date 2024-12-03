@@ -3,7 +3,7 @@ package com.tp6;
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         System.out.println("Exercice 1:");
         com.tp6.ex1.Main.main(args);
         System.out.println("Exercice 2:");
