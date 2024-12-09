@@ -27,6 +27,7 @@ The following is a list of practical exercises available in this repository:
 - [TP 4](tp4/readme.md)
 - [TP 5](tp5/readme.md)
 - [TP 6](tp6/readme.md)
+- [TP 7](tp7/readme.md)
 
 ## Installation
 
